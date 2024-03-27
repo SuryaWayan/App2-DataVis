@@ -196,18 +196,6 @@ def main():
                         st.write("• **Max of**", y_column + ":", f"{filtered_data[y_column].max():.5f}")
                         st.write("• **Average of**", y_column + ":", f"{filtered_data[y_column].mean():.5f}")
                         st.write("• **Standard Deviation of**", y_column + ":", f"{filtered_data[y_column].std():.5f}")
-                    if trendline:
-                        for trace in fig.data:
-                            if trace.name in y_columns:
-                                if trendline_type == "Linear":
-                                    st.write(f"• **Linear Trendline for {trace.name}:** y = {slope:.5f}x + {intercept:.5f}, R-squared: {r_squared:.5f}")
-                                elif trendline_type == "Polynomial":
-                                    degree = degrees[trace.name]
-                                    coeffs = np.polyfit(filtered_data[x_column], filtered_data[trace.name], degree)
-                                    poly_function = np.poly1d(coeffs)
-                                    equation = " + ".join(f"{coeffs[i]:.8f} * x^{degree-i}" for i in range(degree+1))
-                                    r_squared = r2_score(filtered_data[trace.name], poly_function(filtered_data[x_column]))
-                                    st.write(f"• **Polynomial Trendline {degree} for {trace.name}:** y = {equation}, R-squared: {r_squared:.5f}")
                 
                 
                 
