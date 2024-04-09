@@ -182,7 +182,11 @@ def main():
                                                                     name=f"Polynomial Trendline {degree} for {trace.name}",
                                                                     line=dict(color=color))) 
 
-                            fig.update_layout(title=f"Chart {i+1}", xaxis_title=x_column, yaxis_title="Value", height=400) 
+                            fig.update_layout(title=f"Chart {i+1}", 
+                                              xaxis_title=x_column,
+                                              yaxis_title="Value",
+                                              height=400,
+                                              legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)) 
                             st.plotly_chart(fig, use_container_width=True)
                             
 
