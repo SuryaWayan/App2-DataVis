@@ -11,10 +11,10 @@ from sklearn.metrics import r2_score
 # Set page configuration
 st.set_page_config(page_title="Data Visualization App", layout="wide")
 
-col_header1, col_header2, col_header3 = st.columns([3, 4, 0.6])
+col_header1, col_header2, col_header3 = st.columns([3, 4, 0.8])
 
 with col_header3:
-    st.write("Antero Eng Tool")
+    st.write("Antero Eng Tool - by SA")
 
 # Custom CSS for bottom border
 st.markdown(
